@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/tools_fragment_destination">
+
+    <fragment
+            android:id="@+id/main_fragment_destination"
+            android:name="es.uva.sensorphysics.ui.main.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main">
+        <action
+                android:id="@+id/action_main_fragment_to_tools_fragment_destination"
+                app:destination="@id/tools_fragment_destination"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+                android:id="@+id/action_main_fragment_destination_to_projects"
+                app:destination="@id/projects_fragment_destination"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/tools_fragment_destination"
+            android:name="es.uva.sensorphysics.ui.tools.ToolsFragment"
+            android:label="fragment_tools"
+            tools:layout="@layout/fragment_tools">
+    </fragment>
+
+    <fragment
+            android:id="@+id/projects_fragment_destination"
+            android:name="es.uva.sensorphysics.ui.projects.ProjectsFragment"
+            android:label="fragment_list_transfers"
+            tools:layout="@layout/fragment_projects">
+    </fragment>
+</navigation>
