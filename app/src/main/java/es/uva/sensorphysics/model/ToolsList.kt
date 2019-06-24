@@ -28,7 +28,8 @@ object ToolsList {
         "Item five details",
         "Item six details",
         "Item seven details",
-        "Item eight details"
+        "Item eight details",
+        "Item nine details"
     )
 
     private val types = arrayOf(
@@ -44,14 +45,15 @@ object ToolsList {
     )
 
     fun getToolList(): List<Tool> {
-        var tool: Tool
         for (i in 0 until titles.size) {
-            toolsList[i].title = titles[i]
-            toolsList[i].description = description[i]
-            toolsList[i].type = types[i]
-
+            val tool: Tool = getTool(i)
+            toolsList.add(tool)
         }
 
         return toolsList
+    }
+
+    private fun getTool(i: Int): Tool {
+        return Tool(title = titles[i], description = description[i], type = types[i])
     }
 }

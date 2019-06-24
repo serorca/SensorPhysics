@@ -23,7 +23,7 @@ class ToolsFragment: Fragment(), ToolsAdapter.OnItemClickListener {
             return ToolsFragment()
         }
     }
-
+    
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_tools, container, false)
     }
@@ -37,7 +37,7 @@ class ToolsFragment: Fragment(), ToolsAdapter.OnItemClickListener {
         presenter.clickOnRow(position)
     }
 
-    fun initUI() {
+    private fun initUI() {
         rv_tools.layoutManager = LinearLayoutManager(context)
         rv_tools.adapter = ToolsAdapter(ToolsList.getToolList(), this)
     }
